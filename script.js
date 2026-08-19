@@ -1,13 +1,15 @@
-/* =========================================
-   SIPWISE - COMPLETE JAVASCRIPT
-========================================= */
+/* =========================================================
+   SIPWISE
+   COMPLETE JAVASCRIPT
+========================================================= */
 
 
-/* =========================================
+/* =========================================================
    CUSTOMER DEMO DATABASE
-========================================= */
+========================================================= */
 
 const customers = [
+
     {
         id: "CUST1001",
         phone: "9876543210",
@@ -17,6 +19,7 @@ const customers = [
         score: 94,
         invested: false
     },
+
     {
         id: "CUST1002",
         phone: "9823456710",
@@ -26,6 +29,7 @@ const customers = [
         score: 89,
         invested: false
     },
+
     {
         id: "CUST1003",
         phone: "9912345678",
@@ -35,6 +39,7 @@ const customers = [
         score: 87,
         invested: true
     },
+
     {
         id: "CUST1004",
         phone: "9765432189",
@@ -44,6 +49,7 @@ const customers = [
         score: 84,
         invested: false
     },
+
     {
         id: "CUST1005",
         phone: "9988776655",
@@ -53,6 +59,7 @@ const customers = [
         score: 81,
         invested: true
     },
+
     {
         id: "CUST1006",
         phone: "9876123456",
@@ -62,6 +69,7 @@ const customers = [
         score: 74,
         invested: false
     },
+
     {
         id: "CUST1007",
         phone: "9812345670",
@@ -71,6 +79,7 @@ const customers = [
         score: 71,
         invested: false
     },
+
     {
         id: "CUST1008",
         phone: "9765123489",
@@ -80,6 +89,7 @@ const customers = [
         score: 68,
         invested: true
     },
+
     {
         id: "CUST1009",
         phone: "9988123456",
@@ -89,6 +99,7 @@ const customers = [
         score: 65,
         invested: false
     },
+
     {
         id: "CUST1010",
         phone: "9898989898",
@@ -98,6 +109,7 @@ const customers = [
         score: 49,
         invested: false
     },
+
     {
         id: "CUST1011",
         phone: "9753124680",
@@ -107,6 +119,7 @@ const customers = [
         score: 41,
         invested: false
     },
+
     {
         id: "CUST1012",
         phone: "9998887776",
@@ -116,223 +129,382 @@ const customers = [
         score: 35,
         invested: false
     }
+
 ];
 
 
-/* =========================================
+/* =========================================================
    APPLICATION STATE
-========================================= */
+========================================================= */
 
 let currentFilter = "high";
+
 let currentSearch = "";
+
 let selectedBranch = "";
+
 let isLoggedIn = false;
 
 
-/* =========================================
+/* =========================================================
    DOM ELEMENTS
-========================================= */
+========================================================= */
 
-const loginPage = document.getElementById("loginPage");
-const app = document.getElementById("app");
+const loginPage =
+    document.getElementById("loginPage");
 
-const loginForm = document.getElementById("loginForm");
-const branchSelect = document.getElementById("branch");
-const emailInput = document.getElementById("email");
-const passwordInput = document.getElementById("password");
-const loginMessage = document.getElementById("loginMessage");
-const showPasswordButton = document.getElementById("showPassword");
-
-const currentBranch = document.getElementById("currentBranch");
-const topBranchName = document.getElementById("topBranchName");
-
-const logoutButton = document.getElementById("logoutButton");
-const themeToggle = document.getElementById("themeToggle");
-const settingsThemeToggle = document.getElementById("settingsThemeToggle");
-
-const navItems = document.querySelectorAll(".nav-item");
-const pages = document.querySelectorAll(".page");
-
-const pageTitle = document.getElementById("pageTitle");
-const pageSubtitle = document.getElementById("pageSubtitle");
-
-const showAllButton = document.getElementById("showAllButton");
-const viewCustomersButton = document.getElementById("viewCustomersButton");
-const backToHighButton = document.getElementById("backToHighButton");
-
-const customerSearch = document.getElementById("customerSearch");
-const filterButtons = document.querySelectorAll(".filter-button");
-
-const dashboardCustomersBody = document.getElementById("dashboardCustomersBody");
-const customersTableBody = document.getElementById("customersTableBody");
-
-const customerResultCount = document.getElementById("customerResultCount");
-
-const totalCustomers = document.getElementById("totalCustomers");
-const highCustomers = document.getElementById("highCustomers");
-const mediumCustomers = document.getElementById("mediumCustomers");
-const lowCustomers = document.getElementById("lowCustomers");
-
-const dashboardTableTitle = document.getElementById("dashboardTableTitle");
-const dashboardTableDescription = document.getElementById(
-    "dashboardTableDescription"
-);
-
-const averageScore = document.getElementById("averageScore");
-const highRate = document.getElementById("highRate");
-const mediumRate = document.getElementById("mediumRate");
-const lowRate = document.getElementById("lowRate");
-
-const highDistributionText = document.getElementById(
-    "highDistributionText"
-);
-
-const mediumDistributionText = document.getElementById(
-    "mediumDistributionText"
-);
-
-const lowDistributionText = document.getElementById(
-    "lowDistributionText"
-);
-
-const highProgress = document.getElementById("highProgress");
-const mediumProgress = document.getElementById("mediumProgress");
-const lowProgress = document.getElementById("lowProgress");
+const app =
+    document.getElementById("app");
 
 
-/* =========================================
+const loginForm =
+    document.getElementById("loginForm");
+
+const branchSelect =
+    document.getElementById("branch");
+
+const emailInput =
+    document.getElementById("email");
+
+const passwordInput =
+    document.getElementById("password");
+
+const loginMessage =
+    document.getElementById("loginMessage");
+
+const showPasswordButton =
+    document.getElementById("showPassword");
+
+
+const currentBranch =
+    document.getElementById("currentBranch");
+
+const topBranchName =
+    document.getElementById("topBranchName");
+
+
+const logoutButton =
+    document.getElementById("logoutButton");
+
+
+const themeToggle =
+    document.getElementById("themeToggle");
+
+const settingsThemeToggle =
+    document.getElementById("settingsThemeToggle");
+
+
+const navItems =
+    document.querySelectorAll(".nav-item");
+
+const pages =
+    document.querySelectorAll(".page");
+
+
+const pageTitle =
+    document.getElementById("pageTitle");
+
+const pageSubtitle =
+    document.getElementById("pageSubtitle");
+
+
+const showAllButton =
+    document.getElementById("showAllButton");
+
+const viewCustomersButton =
+    document.getElementById("viewCustomersButton");
+
+const backToHighButton =
+    document.getElementById("backToHighButton");
+
+
+const customerSearch =
+    document.getElementById("customerSearch");
+
+const filterButtons =
+    document.querySelectorAll(".filter-button");
+
+
+const dashboardCustomersBody =
+    document.getElementById("dashboardCustomersBody");
+
+const customersTableBody =
+    document.getElementById("customersTableBody");
+
+const customerResultCount =
+    document.getElementById("customerResultCount");
+
+
+const totalCustomers =
+    document.getElementById("totalCustomers");
+
+const highCustomers =
+    document.getElementById("highCustomers");
+
+const mediumCustomers =
+    document.getElementById("mediumCustomers");
+
+const lowCustomers =
+    document.getElementById("lowCustomers");
+
+
+const dashboardTableTitle =
+    document.getElementById("dashboardTableTitle");
+
+const dashboardTableDescription =
+    document.getElementById(
+        "dashboardTableDescription"
+    );
+
+
+const averageScore =
+    document.getElementById("averageScore");
+
+const highRate =
+    document.getElementById("highRate");
+
+const mediumRate =
+    document.getElementById("mediumRate");
+
+const lowRate =
+    document.getElementById("lowRate");
+
+
+const highDistributionText =
+    document.getElementById(
+        "highDistributionText"
+    );
+
+const mediumDistributionText =
+    document.getElementById(
+        "mediumDistributionText"
+    );
+
+const lowDistributionText =
+    document.getElementById(
+        "lowDistributionText"
+    );
+
+
+const highProgress =
+    document.getElementById("highProgress");
+
+const mediumProgress =
+    document.getElementById("mediumProgress");
+
+const lowProgress =
+    document.getElementById("lowProgress");
+
+
+/* =========================================================
    PASSWORD SHOW / HIDE
-========================================= */
+========================================================= */
 
-showPasswordButton.addEventListener("click", function () {
+showPasswordButton.addEventListener(
+    "click",
+    function () {
 
-    if (passwordInput.type === "password") {
+        if (passwordInput.type === "password") {
 
-        passwordInput.type = "text";
-        showPasswordButton.textContent = "Hide";
+            passwordInput.type = "text";
 
-    } else {
+            showPasswordButton.textContent = "Hide";
+
+        } else {
+
+            passwordInput.type = "password";
+
+            showPasswordButton.textContent = "Show";
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   LOGIN
+========================================================= */
+
+loginForm.addEventListener(
+    "submit",
+    function (event) {
+
+        event.preventDefault();
+
+
+        const branch =
+            branchSelect.value;
+
+        const email =
+            emailInput.value.trim();
+
+        const password =
+            passwordInput.value.trim();
+
+
+        /* Validate all login fields */
+
+        if (!branch || !email || !password) {
+
+            loginMessage.textContent =
+                "Please enter branch, bank email and password.";
+
+            return;
+
+        }
+
+
+        /* Basic frontend validation */
+
+        if (!email.includes("@")) {
+
+            loginMessage.textContent =
+                "Please enter a valid bank email.";
+
+            return;
+
+        }
+
+
+        if (password.length < 4) {
+
+            loginMessage.textContent =
+                "Password must contain at least 4 characters.";
+
+            return;
+
+        }
+
+
+        /* Successful demo login */
+
+        selectedBranch = branch;
+
+        isLoggedIn = true;
+
+        loginMessage.textContent = "";
+
+
+        currentBranch.textContent =
+            selectedBranch;
+
+        topBranchName.textContent =
+            selectedBranch;
+
+
+        loginPage.classList.add("hidden");
+
+        app.classList.remove("hidden");
+
+
+        /* Dashboard always starts with High Propensity */
+
+        currentFilter = "high";
+
+        currentSearch = "";
+
+
+        customerSearch.value = "";
+
+
+        updateFilterButtons();
+
+        renderEverything();
+
+        openPage("dashboard");
+
+    }
+);
+
+
+/* =========================================================
+   LOGOUT
+========================================================= */
+
+logoutButton.addEventListener(
+    "click",
+    function () {
+
+        isLoggedIn = false;
+
+        selectedBranch = "";
+
+
+        app.classList.add("hidden");
+
+        loginPage.classList.remove("hidden");
+
+
+        loginForm.reset();
+
+        loginMessage.textContent = "";
+
 
         passwordInput.type = "password";
+
         showPasswordButton.textContent = "Show";
 
-    }
 
-});
+        currentFilter = "high";
 
-
-/* =========================================
-   LOGIN
-========================================= */
-
-loginForm.addEventListener("submit", function (event) {
-
-    event.preventDefault();
-
-    const branch = branchSelect.value;
-    const email = emailInput.value.trim();
-    const password = passwordInput.value.trim();
-
-
-    if (!branch || !email || !password) {
-
-        loginMessage.textContent =
-            "Please enter branch, bank email and password.";
-
-        return;
+        currentSearch = "";
 
     }
+);
 
 
-    /* Demo frontend login validation */
-
-    if (!email.includes("@") || password.length < 4) {
-
-        loginMessage.textContent =
-            "Please enter valid login details.";
-
-        return;
-
-    }
-
-
-    selectedBranch = branch;
-    isLoggedIn = true;
-
-    loginMessage.textContent = "";
-
-    currentBranch.textContent = selectedBranch;
-    topBranchName.textContent = selectedBranch;
-
-    loginPage.classList.add("hidden");
-    app.classList.remove("hidden");
-
-
-    /* Dashboard default = HIGH PROPENSITY */
-
-    currentFilter = "high";
-    currentSearch = "";
-
-    if (customerSearch) {
-        customerSearch.value = "";
-    }
-
-    updateFilterButtons();
-    renderEverything();
-
-});
-
-
-/* =========================================
-   LOGOUT
-========================================= */
-
-logoutButton.addEventListener("click", function () {
-
-    isLoggedIn = false;
-    selectedBranch = "";
-
-    app.classList.add("hidden");
-    loginPage.classList.remove("hidden");
-
-    loginForm.reset();
-
-    loginMessage.textContent = "";
-
-    passwordInput.type = "password";
-    showPasswordButton.textContent = "Show";
-
-});
-
-
-/* =========================================
-   PAGE NAVIGATION
-========================================= */
+/* =========================================================
+   PAGE INFORMATION
+========================================================= */
 
 const pageInformation = {
 
     dashboard: {
+
         title: "Dashboard",
-        subtitle: "SIP propensity overview for your branch."
+
+        subtitle:
+            "SIP propensity overview for your branch."
+
     },
+
 
     customers: {
+
         title: "Customers",
-        subtitle: "Search and manage branch customer propensity data."
+
+        subtitle:
+            "Search and manage branch customer propensity data."
+
     },
+
 
     analytics: {
+
         title: "Analytics",
-        subtitle: "Understand SIP propensity distribution and insights."
+
+        subtitle:
+            "Understand SIP propensity distribution and insights."
+
     },
 
+
     settings: {
+
         title: "Settings",
-        subtitle: "Manage dashboard and prototype preferences."
+
+        subtitle:
+            "Manage dashboard and prototype preferences."
+
     }
 
 };
 
+
+/* =========================================================
+   PAGE NAVIGATION
+========================================================= */
 
 function openPage(pageName) {
 
@@ -350,14 +522,16 @@ function openPage(pageName) {
     });
 
 
-    const selectedPage = document.getElementById(
-        pageName + "Page"
-    );
+    const selectedPage =
+        document.getElementById(
+            pageName + "Page"
+        );
 
 
-    const selectedNavItem = document.querySelector(
-        `.nav-item[data-page="${pageName}"]`
-    );
+    const selectedNavItem =
+        document.querySelector(
+            `.nav-item[data-page="${pageName}"]`
+        );
 
 
     if (selectedPage) {
@@ -385,8 +559,6 @@ function openPage(pageName) {
     }
 
 
-    /* Opens page at top on same browser tab */
-
     window.scrollTo({
         top: 0,
         behavior: "smooth"
@@ -395,142 +567,235 @@ function openPage(pageName) {
 }
 
 
+/* Navigation button events */
+
 navItems.forEach(function (item) {
 
-    item.addEventListener("click", function () {
+    item.addEventListener(
+        "click",
+        function () {
 
-        const pageName = item.dataset.page;
+            const pageName =
+                item.dataset.page;
 
-        openPage(pageName);
+            openPage(pageName);
 
-    });
+        }
+    );
 
 });
 
 
-/* =========================================
-   DARK MODE
-========================================= */
+/* =========================================================
+   DARK / LIGHT MODE
+========================================================= */
 
 function updateThemeIcon() {
 
-    if (document.body.classList.contains("light-mode")) {
+    const isLightMode =
+        document.body.classList.contains(
+            "light-mode"
+        );
+
+
+    if (isLightMode) {
 
         themeToggle.textContent = "☾";
+
+        themeToggle.title =
+            "Switch to Dark Mode";
 
     } else {
 
         themeToggle.textContent = "☀";
+
+        themeToggle.title =
+            "Switch to Light Mode";
 
     }
 
 }
 
 
-function toggleTheme() {
+function applySavedTheme() {
 
-    document.body.classList.toggle("light-mode");
+    const savedTheme =
+        localStorage.getItem(
+            "sipwise-theme"
+        );
+
+
+    if (savedTheme === "light") {
+
+        document.body.classList.add(
+            "light-mode"
+        );
+
+    } else {
+
+        document.body.classList.remove(
+            "light-mode"
+        );
+
+    }
+
 
     updateThemeIcon();
 
 }
 
 
-themeToggle.addEventListener("click", toggleTheme);
+function toggleTheme() {
+
+    document.body.classList.toggle(
+        "light-mode"
+    );
 
 
-settingsThemeToggle.addEventListener("click", toggleTheme);
+    const currentTheme =
+        document.body.classList.contains(
+            "light-mode"
+        )
+            ? "light"
+            : "dark";
 
 
-/* =========================================
+    localStorage.setItem(
+        "sipwise-theme",
+        currentTheme
+    );
+
+
+    updateThemeIcon();
+
+}
+
+
+themeToggle.addEventListener(
+    "click",
+    toggleTheme
+);
+
+
+settingsThemeToggle.addEventListener(
+    "click",
+    toggleTheme
+);
+
+
+/* =========================================================
    SHOW ALL ACCOUNTS
-========================================= */
+========================================================= */
 
-showAllButton.addEventListener("click", function () {
+showAllButton.addEventListener(
+    "click",
+    function () {
 
-    currentFilter = "all";
-    currentSearch = "";
+        currentFilter = "all";
 
-    if (customerSearch) {
+        currentSearch = "";
+
         customerSearch.value = "";
+
+
+        updateFilterButtons();
+
+        renderEverything();
+
+        openPage("customers");
+
     }
-
-    updateFilterButtons();
-    renderEverything();
-
-    openPage("customers");
-
-});
+);
 
 
-/* =========================================
-   VIEW CUSTOMERS
-========================================= */
+/* =========================================================
+   VIEW HIGH PROPENSITY CUSTOMERS
+========================================================= */
 
-viewCustomersButton.addEventListener("click", function () {
+viewCustomersButton.addEventListener(
+    "click",
+    function () {
 
-    currentFilter = "high";
-    currentSearch = "";
+        currentFilter = "high";
 
-    if (customerSearch) {
+        currentSearch = "";
+
         customerSearch.value = "";
+
+
+        updateFilterButtons();
+
+        renderEverything();
+
+        openPage("customers");
+
     }
-
-    updateFilterButtons();
-    renderEverything();
-
-    openPage("customers");
-
-});
+);
 
 
-/* =========================================
+/* =========================================================
    SHOW HIGH ONLY
-========================================= */
+========================================================= */
 
-backToHighButton.addEventListener("click", function () {
+backToHighButton.addEventListener(
+    "click",
+    function () {
 
-    currentFilter = "high";
-    currentSearch = "";
+        currentFilter = "high";
 
-    customerSearch.value = "";
+        currentSearch = "";
 
-    updateFilterButtons();
-    renderCustomers();
+        customerSearch.value = "";
 
-});
-
-
-/* =========================================
-   CUSTOMER SEARCH
-========================================= */
-
-customerSearch.addEventListener("input", function () {
-
-    currentSearch = customerSearch.value
-        .trim()
-        .toLowerCase();
-
-    renderCustomers();
-
-});
-
-
-/* =========================================
-   PROPENSITY FILTERS
-========================================= */
-
-filterButtons.forEach(function (button) {
-
-    button.addEventListener("click", function () {
-
-        currentFilter = button.dataset.filter;
 
         updateFilterButtons();
 
         renderCustomers();
 
-    });
+    }
+);
+
+
+/* =========================================================
+   CUSTOMER SEARCH
+========================================================= */
+
+customerSearch.addEventListener(
+    "input",
+    function () {
+
+        currentSearch =
+            customerSearch.value
+                .trim()
+                .toLowerCase();
+
+
+        renderCustomers();
+
+    }
+);
+
+
+/* =========================================================
+   PROPENSITY FILTERS
+========================================================= */
+
+filterButtons.forEach(function (button) {
+
+    button.addEventListener(
+        "click",
+        function () {
+
+            currentFilter =
+                button.dataset.filter;
+
+
+            updateFilterButtons();
+
+            renderCustomers();
+
+        }
+    );
 
 });
 
@@ -539,11 +804,19 @@ function updateFilterButtons() {
 
     filterButtons.forEach(function (button) {
 
-        button.classList.remove("active-filter");
+        button.classList.remove(
+            "active-filter"
+        );
 
-        if (button.dataset.filter === currentFilter) {
 
-            button.classList.add("active-filter");
+        if (
+            button.dataset.filter ===
+            currentFilter
+        ) {
+
+            button.classList.add(
+                "active-filter"
+            );
 
         }
 
@@ -552,51 +825,69 @@ function updateFilterButtons() {
 }
 
 
-/* =========================================
+/* =========================================================
    GET FILTERED CUSTOMERS
-========================================= */
+========================================================= */
 
 function getFilteredCustomers() {
 
-    return customers.filter(function (customer) {
+    return customers.filter(
+        function (customer) {
 
-        const matchesFilter =
-            currentFilter === "all" ||
-            customer.propensity === currentFilter;
+            const matchesFilter =
 
+                currentFilter === "all" ||
 
-        const matchesSearch =
-            customer.id
-                .toLowerCase()
-                .includes(currentSearch);
+                customer.propensity ===
+                currentFilter;
 
 
-        return matchesFilter && matchesSearch;
+            const matchesSearch =
 
-    });
+                customer.id
+                    .toLowerCase()
+                    .includes(
+                        currentSearch
+                    );
+
+
+            return (
+                matchesFilter &&
+                matchesSearch
+            );
+
+        }
+    );
 
 }
 
 
-/* =========================================
+/* =========================================================
    FORMAT SALARY
-========================================= */
+========================================================= */
 
 function formatSalary(salary) {
 
-    return "₹" + salary.toLocaleString("en-IN");
+    return (
+        "₹" +
+        salary.toLocaleString(
+            "en-IN"
+        )
+    );
 
 }
 
 
-/* =========================================
+/* =========================================================
    PROPENSITY BADGE
-========================================= */
+========================================================= */
 
 function getPropensityBadge(propensity) {
 
     const capitalized =
+
         propensity.charAt(0).toUpperCase() +
+
         propensity.slice(1);
 
 
@@ -609,9 +900,9 @@ function getPropensityBadge(propensity) {
 }
 
 
-/* =========================================
+/* =========================================================
    INVESTMENT STATUS
-========================================= */
+========================================================= */
 
 function getInvestmentStatus(customer) {
 
@@ -635,73 +926,111 @@ function getInvestmentStatus(customer) {
 }
 
 
-/* =========================================
+/* =========================================================
    DASHBOARD TABLE
-   PHONE NUMBER IS NEVER SHOWN
-========================================= */
+
+   Dashboard:
+   - Shows ONLY high propensity customers
+   - Customer names are never displayed
+   - Contact number is never displayed
+========================================================= */
 
 function renderDashboardCustomers() {
 
     const highPropensityCustomers =
-        customers.filter(function (customer) {
 
-            return customer.propensity === "high";
+        customers.filter(
+            function (customer) {
 
-        });
+                return (
+                    customer.propensity ===
+                    "high"
+                );
+
+            }
+        );
 
 
     dashboardCustomersBody.innerHTML = "";
 
 
-    highPropensityCustomers.forEach(function (customer) {
+    highPropensityCustomers.forEach(
+        function (customer) {
 
-        const row = document.createElement("tr");
-
-
-        row.innerHTML = `
-            <td>${customer.id}</td>
-
-            <td>
-                <span class="contact-protected">
-                    Protected
-                </span>
-            </td>
-
-            <td>${formatSalary(customer.salary)}</td>
-
-            <td>${customer.age}</td>
-
-            <td>
-                ${getPropensityBadge(customer.propensity)}
-            </td>
-
-            <td>
-                <span class="score">
-                    ${customer.score}
-                </span>
-            </td>
-        `;
+            const row =
+                document.createElement("tr");
 
 
-        dashboardCustomersBody.appendChild(row);
+            row.innerHTML = `
 
-    });
+                <td>
+                    ${customer.id}
+                </td>
+
+                <td>
+                    <span class="contact-protected">
+                        Protected
+                    </span>
+                </td>
+
+                <td>
+                    ${formatSalary(customer.salary)}
+                </td>
+
+                <td>
+                    ${customer.age}
+                </td>
+
+                <td>
+                    ${getPropensityBadge(
+                        customer.propensity
+                    )}
+                </td>
+
+                <td>
+                    <span class="score">
+                        ${customer.score}
+                    </span>
+                </td>
+
+            `;
+
+
+            dashboardCustomersBody.appendChild(
+                row
+            );
+
+        }
+    );
 
 }
 
 
-/* =========================================
-   FETCH CONTACT NUMBER
-   DEMO DATABASE FUNCTION
-========================================= */
+/* =========================================================
+   FETCH CUSTOMER CONTACT
 
-function fetchCustomerContact(customerId, contactCell, button) {
+   Contact can only be fetched when:
+   1. Customer is HIGH propensity
+   2. Customer has NOT invested
 
-    const customer = customers.find(function (item) {
+   This currently simulates a database fetch.
+========================================================= */
 
-        return item.id === customerId;
+function fetchCustomerContact(
+    customerId,
+    contactCell,
+    button
+) {
 
-    });
+    const customer = customers.find(
+        function (item) {
+
+            return (
+                item.id === customerId
+            );
+
+        }
+    );
 
 
     if (!customer) {
@@ -709,14 +1038,10 @@ function fetchCustomerContact(customerId, contactCell, button) {
     }
 
 
-    /*
-       Contact can only be fetched when:
-       1. Customer has HIGH propensity
-       2. Customer has NOT invested
-    */
-
     const isAllowed =
+
         customer.propensity === "high" &&
+
         customer.invested === false;
 
 
@@ -733,32 +1058,41 @@ function fetchCustomerContact(customerId, contactCell, button) {
     }
 
 
-    /* Simulated database retrieval */
+    button.textContent =
+        "Fetching...";
 
-    button.textContent = "Fetching...";
     button.disabled = true;
 
 
-    setTimeout(function () {
+    /* Simulated database retrieval */
 
-        contactCell.innerHTML = `
-            <span class="contact-number">
-                ${customer.phone}
-            </span>
-        `;
+    setTimeout(
+        function () {
+
+            contactCell.innerHTML = `
+                <span class="contact-number">
+                    ${customer.phone}
+                </span>
+            `;
 
 
-        button.textContent = "Fetched";
-        button.classList.add("revealed");
+            button.textContent =
+                "Fetched";
 
-    }, 500);
+            button.classList.add(
+                "revealed"
+            );
+
+        },
+        500
+    );
 
 }
 
 
-/* =========================================
+/* =========================================================
    CUSTOMERS TABLE
-========================================= */
+========================================================= */
 
 function renderCustomers() {
 
@@ -770,14 +1104,22 @@ function renderCustomers() {
 
 
     customerResultCount.textContent =
-        `${filteredCustomers.length} account${filteredCustomers.length === 1 ? "" : "s"} found`;
+
+        `${filteredCustomers.length} account${
+            filteredCustomers.length === 1
+                ? ""
+                : "s"
+        } found`;
 
 
     if (filteredCustomers.length === 0) {
 
         customersTableBody.innerHTML = `
             <tr>
-                <td colspan="8" style="text-align:center;">
+                <td
+                    colspan="8"
+                    style="text-align:center;"
+                >
                     No customer accounts found.
                 </td>
             </tr>
@@ -788,141 +1130,203 @@ function renderCustomers() {
     }
 
 
-    filteredCustomers.forEach(function (customer) {
+    filteredCustomers.forEach(
+        function (customer) {
 
-        const row = document.createElement("tr");
-
-
-        const canFetchContact =
-            customer.propensity === "high" &&
-            customer.invested === false;
+            const row =
+                document.createElement("tr");
 
 
-        const actionContent = canFetchContact
+            const canFetchContact =
 
-            ? `
-                <button
-                    class="fetch-contact-button"
-                    data-customer-id="${customer.id}"
-                >
-                    Fetch Contact
-                </button>
-            `
+                customer.propensity === "high" &&
 
-            : `
-                <span class="contact-unavailable">
-                    Not available
-                </span>
+                customer.invested === false;
+
+
+            const actionContent =
+                canFetchContact
+
+                    ? `
+                        <button
+                            class="fetch-contact-button"
+                            data-customer-id="${customer.id}"
+                        >
+                            Fetch Contact
+                        </button>
+                    `
+
+                    : `
+                        <span class="contact-unavailable">
+                            Not available
+                        </span>
+                    `;
+
+
+            row.innerHTML = `
+
+                <td>
+                    ${customer.id}
+                </td>
+
+                <td>
+                    ${formatSalary(customer.salary)}
+                </td>
+
+                <td>
+                    ${customer.age}
+                </td>
+
+                <td>
+                    ${getPropensityBadge(
+                        customer.propensity
+                    )}
+                </td>
+
+                <td>
+                    <span class="score">
+                        ${customer.score}
+                    </span>
+                </td>
+
+                <td>
+                    ${getInvestmentStatus(customer)}
+                </td>
+
+                <td class="customer-contact-cell">
+                    <span class="contact-protected">
+                        Protected
+                    </span>
+                </td>
+
+                <td>
+                    ${actionContent}
+                </td>
+
             `;
 
 
-        row.innerHTML = `
-            <td>${customer.id}</td>
-
-            <td>${formatSalary(customer.salary)}</td>
-
-            <td>${customer.age}</td>
-
-            <td>
-                ${getPropensityBadge(customer.propensity)}
-            </td>
-
-            <td>
-                <span class="score">
-                    ${customer.score}
-                </span>
-            </td>
-
-            <td>
-                ${getInvestmentStatus(customer)}
-            </td>
-
-            <td class="customer-contact-cell">
-                <span class="contact-protected">
-                    Protected
-                </span>
-            </td>
-
-            <td>
-                ${actionContent}
-            </td>
-        `;
+            customersTableBody.appendChild(
+                row
+            );
 
 
-        customersTableBody.appendChild(row);
+            if (canFetchContact) {
+
+                const fetchButton =
+                    row.querySelector(
+                        ".fetch-contact-button"
+                    );
 
 
-        if (canFetchContact) {
-
-            const fetchButton =
-                row.querySelector(".fetch-contact-button");
-
-
-            const contactCell =
-                row.querySelector(".customer-contact-cell");
+                const contactCell =
+                    row.querySelector(
+                        ".customer-contact-cell"
+                    );
 
 
-            fetchButton.addEventListener("click", function () {
+                fetchButton.addEventListener(
+                    "click",
+                    function () {
 
-                fetchCustomerContact(
-                    customer.id,
-                    contactCell,
-                    fetchButton
+                        fetchCustomerContact(
+                            customer.id,
+                            contactCell,
+                            fetchButton
+                        );
+
+                    }
                 );
 
-            });
+            }
 
         }
-
-    });
+    );
 
 }
 
 
-/* =========================================
+/* =========================================================
    DASHBOARD STATISTICS
-========================================= */
+========================================================= */
 
 function updateStatistics() {
 
-    const total = customers.length;
+    const total =
+        customers.length;
+
 
     const high =
-        customers.filter(function (customer) {
-            return customer.propensity === "high";
-        }).length;
+        customers.filter(
+            function (customer) {
+
+                return (
+                    customer.propensity ===
+                    "high"
+                );
+
+            }
+        ).length;
 
 
     const medium =
-        customers.filter(function (customer) {
-            return customer.propensity === "medium";
-        }).length;
+        customers.filter(
+            function (customer) {
+
+                return (
+                    customer.propensity ===
+                    "medium"
+                );
+
+            }
+        ).length;
 
 
     const low =
-        customers.filter(function (customer) {
-            return customer.propensity === "low";
-        }).length;
+        customers.filter(
+            function (customer) {
+
+                return (
+                    customer.propensity ===
+                    "low"
+                );
+
+            }
+        ).length;
 
 
-    totalCustomers.textContent = total;
-    highCustomers.textContent = high;
-    mediumCustomers.textContent = medium;
-    lowCustomers.textContent = low;
+    totalCustomers.textContent =
+        total;
+
+    highCustomers.textContent =
+        high;
+
+    mediumCustomers.textContent =
+        medium;
+
+    lowCustomers.textContent =
+        low;
 
 }
 
 
-/* =========================================
-   DASHBOARD TITLE
-========================================= */
+/* =========================================================
+   DASHBOARD CONTENT
+========================================================= */
 
 function updateDashboardContent() {
 
     const high =
-        customers.filter(function (customer) {
-            return customer.propensity === "high";
-        }).length;
+        customers.filter(
+            function (customer) {
+
+                return (
+                    customer.propensity ===
+                    "high"
+                );
+
+            }
+        ).length;
 
 
     dashboardTableTitle.textContent =
@@ -935,39 +1339,67 @@ function updateDashboardContent() {
 }
 
 
-/* =========================================
+/* =========================================================
    ANALYTICS
-========================================= */
+========================================================= */
 
 function updateAnalytics() {
 
-    const total = customers.length;
+    const total =
+        customers.length;
 
 
     const high =
-        customers.filter(function (customer) {
-            return customer.propensity === "high";
-        }).length;
+        customers.filter(
+            function (customer) {
+
+                return (
+                    customer.propensity ===
+                    "high"
+                );
+
+            }
+        ).length;
 
 
     const medium =
-        customers.filter(function (customer) {
-            return customer.propensity === "medium";
-        }).length;
+        customers.filter(
+            function (customer) {
+
+                return (
+                    customer.propensity ===
+                    "medium"
+                );
+
+            }
+        ).length;
 
 
     const low =
-        customers.filter(function (customer) {
-            return customer.propensity === "low";
-        }).length;
+        customers.filter(
+            function (customer) {
+
+                return (
+                    customer.propensity ===
+                    "low"
+                );
+
+            }
+        ).length;
 
 
     const totalScore =
-        customers.reduce(function (sum, customer) {
+        customers.reduce(
+            function (sum, customer) {
 
-            return sum + customer.score;
+                return (
+                    sum +
+                    customer.score
+                );
 
-        }, 0);
+            },
+            0
+        );
 
 
     const average =
@@ -975,15 +1407,21 @@ function updateAnalytics() {
 
 
     const highPercentage =
-        Math.round((high / total) * 100);
+        Math.round(
+            (high / total) * 100
+        );
 
 
     const mediumPercentage =
-        Math.round((medium / total) * 100);
+        Math.round(
+            (medium / total) * 100
+        );
 
 
     const lowPercentage =
-        Math.round((low / total) * 100);
+        Math.round(
+            (low / total) * 100
+        );
 
 
     averageScore.textContent =
@@ -1028,9 +1466,9 @@ function updateAnalytics() {
 }
 
 
-/* =========================================
+/* =========================================================
    RENDER EVERYTHING
-========================================= */
+========================================================= */
 
 function renderEverything() {
 
@@ -1047,12 +1485,15 @@ function renderEverything() {
 }
 
 
-/* =========================================
+/* =========================================================
    INITIAL SETUP
-========================================= */
+========================================================= */
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
 
-    updateThemeIcon();
+        applySavedTheme();
 
-});
+    }
+);

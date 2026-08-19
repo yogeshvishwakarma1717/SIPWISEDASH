@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,39 +12,74 @@
 
 <body>
 
-    <!-- ================= LOGIN PAGE ================= -->
+    <!-- ==============================
+         LOGIN PAGE
+    =============================== -->
     <div id="loginPage" class="login-page">
 
         <div class="login-card">
 
             <div class="login-brand">
-                <div class="logo">S</div>
+
+                <div class="logo">
+                    S
+                </div>
 
                 <div>
                     <h1>SIPWISE</h1>
                     <p>SIP Propensity Dashboard</p>
                 </div>
+
             </div>
 
+
             <div class="login-heading">
+
                 <h2>Bank Sign In</h2>
-                <p>Access your branch's SIP propensity dashboard.</p>
+
+                <p>
+                    Access your branch's SIP propensity dashboard.
+                </p>
+
             </div>
+
 
             <form id="loginForm">
 
-                <label for="branch">Branch</label>
+                <label for="branch">
+                    Branch
+                </label>
 
                 <select id="branch" required>
-                    <option value="">Select branch</option>
-                    <option value="Andheri West">Andheri West</option>
-                    <option value="Borivali">Borivali</option>
-                    <option value="Dadar">Dadar</option>
-                    <option value="Malad">Malad</option>
-                    <option value="Thane">Thane</option>
+                    <option value="">
+                        Select branch
+                    </option>
+
+                    <option value="Andheri West">
+                        Andheri West
+                    </option>
+
+                    <option value="Borivali">
+                        Borivali
+                    </option>
+
+                    <option value="Dadar">
+                        Dadar
+                    </option>
+
+                    <option value="Malad">
+                        Malad
+                    </option>
+
+                    <option value="Thane">
+                        Thane
+                    </option>
                 </select>
 
-                <label for="email">Bank Email</label>
+
+                <label for="email">
+                    Bank Email
+                </label>
 
                 <input
                     type="email"
@@ -53,7 +88,10 @@
                     required
                 >
 
-                <label for="password">Password</label>
+
+                <label for="password">
+                    Password
+                </label>
 
                 <div class="password-box">
 
@@ -73,18 +111,31 @@
 
                 </div>
 
-                <button type="submit" class="login-button">
+
+                <button
+                    type="submit"
+                    class="login-button"
+                >
                     Sign In
                 </button>
 
-                <p id="loginMessage" class="login-message"></p>
+
+                <p
+                    id="loginMessage"
+                    class="login-message"
+                ></p>
 
             </form>
 
+
             <div class="login-footer">
+
                 Protected bank access
+
                 <span>•</span>
+
                 Branch-level dashboard
+
             </div>
 
         </div>
@@ -92,55 +143,97 @@
     </div>
 
 
-    <!-- ================= MAIN APPLICATION ================= -->
+
+    <!-- ==============================
+         MAIN APPLICATION
+    =============================== -->
     <div id="app" class="app hidden">
 
-        <!-- ================= SIDEBAR ================= -->
+
+        <!-- ==============================
+             SIDEBAR
+        =============================== -->
         <aside class="sidebar">
 
             <div class="sidebar-brand">
 
-                <div class="logo small-logo">S</div>
+                <div class="logo small-logo">
+                    S
+                </div>
 
                 <div class="brand-text">
+
                     <h2>SIPWISE</h2>
-                    <span>SIP Dashboard</span>
+
+                    <span>
+                        SIP Dashboard
+                    </span>
+
                 </div>
 
             </div>
 
+
+            <!-- Navigation -->
             <nav class="sidebar-menu">
 
-                <button class="nav-item active" data-page="dashboard">
+                <button
+                    class="nav-item active"
+                    data-page="dashboard"
+                >
                     <span class="nav-icon">▦</span>
                     Dashboard
                 </button>
 
-                <button class="nav-item" data-page="customers">
+
+                <button
+                    class="nav-item"
+                    data-page="customers"
+                >
                     <span class="nav-icon">◉</span>
                     Customers
                 </button>
 
-                <button class="nav-item" data-page="analytics">
+
+                <button
+                    class="nav-item"
+                    data-page="analytics"
+                >
                     <span class="nav-icon">◈</span>
                     Analytics
                 </button>
 
-                <button class="nav-item" data-page="settings">
+
+                <button
+                    class="nav-item"
+                    data-page="settings"
+                >
                     <span class="nav-icon">⚙</span>
                     Settings
                 </button>
 
             </nav>
 
+
             <div class="sidebar-bottom">
 
                 <div class="branch-info">
-                    <span class="branch-label">CURRENT BRANCH</span>
-                    <strong id="currentBranch">Not selected</strong>
+
+                    <span class="branch-label">
+                        CURRENT BRANCH
+                    </span>
+
+                    <strong id="currentBranch">
+                        Not selected
+                    </strong>
+
                 </div>
 
-                <button id="logoutButton" class="logout-button">
+
+                <button
+                    id="logoutButton"
+                    class="logout-button"
+                >
                     ↪ Logout
                 </button>
 
@@ -149,15 +242,23 @@
         </aside>
 
 
-        <!-- ================= MAIN CONTENT ================= -->
+
+        <!-- ==============================
+             MAIN CONTENT
+        =============================== -->
         <main class="main-content">
 
-            <!-- ================= TOP BAR ================= -->
+
+            <!-- ==============================
+                 TOP BAR
+            =============================== -->
             <header class="topbar">
 
                 <div>
 
-                    <h1 id="pageTitle">Dashboard</h1>
+                    <h1 id="pageTitle">
+                        Dashboard
+                    </h1>
 
                     <p id="pageSubtitle">
                         SIP propensity overview for your branch.
@@ -165,16 +266,25 @@
 
                 </div>
 
+
                 <div class="topbar-actions">
 
                     <div class="user-branch">
-                        <span id="topBranchName">Branch</span>
+
+                        <span class="branch-dot"></span>
+
+                        <span id="topBranchName">
+                            Branch
+                        </span>
+
                     </div>
+
 
                     <button
                         id="themeToggle"
                         class="theme-toggle"
                         title="Change theme"
+                        type="button"
                     >
                         ☀
                     </button>
@@ -184,26 +294,34 @@
             </header>
 
 
-            <!-- ================================================= -->
-            <!-- DASHBOARD PAGE -->
-            <!-- ================================================= -->
-            <section id="dashboardPage" class="page active-page">
 
-                <!-- Welcome -->
+            <!-- =====================================
+                 DASHBOARD PAGE
+            ====================================== -->
+            <section
+                id="dashboardPage"
+                class="page active-page"
+            >
+
                 <div class="welcome-card">
 
                     <div>
+
+                        <span class="eyebrow">
+                            SIPWISE INSIGHT
+                        </span>
 
                         <h2>
                             High Propensity Customers
                         </h2>
 
                         <p>
-                            The dashboard initially displays customers with
-                            high SIP investment propensity.
+                            The dashboard initially displays customers
+                            with high SIP investment propensity.
                         </p>
 
                     </div>
+
 
                     <button
                         id="showAllButton"
@@ -215,45 +333,66 @@
                 </div>
 
 
+
                 <!-- Statistics -->
                 <div class="stats-grid">
 
                     <div class="stat-card">
 
-                        <span>Total Customers</span>
+                        <span>
+                            Total Customers
+                        </span>
 
-                        <h3 id="totalCustomers">0</h3>
+                        <h3 id="totalCustomers">
+                            0
+                        </h3>
 
                     </div>
+
 
                     <div class="stat-card high-stat">
 
-                        <span>High Propensity</span>
+                        <span>
+                            High Propensity
+                        </span>
 
-                        <h3 id="highCustomers">0</h3>
+                        <h3 id="highCustomers">
+                            0
+                        </h3>
 
                     </div>
+
 
                     <div class="stat-card medium-stat">
 
-                        <span>Medium Propensity</span>
+                        <span>
+                            Medium Propensity
+                        </span>
 
-                        <h3 id="mediumCustomers">0</h3>
+                        <h3 id="mediumCustomers">
+                            0
+                        </h3>
 
                     </div>
 
+
                     <div class="stat-card low-stat">
 
-                        <span>Low Propensity</span>
+                        <span>
+                            Low Propensity
+                        </span>
 
-                        <h3 id="lowCustomers">0</h3>
+                        <h3 id="lowCustomers">
+                            0
+                        </h3>
 
                     </div>
 
                 </div>
 
 
-                <!-- Customer Preview -->
+
+                <!-- Dashboard Customer Table -->
                 <div class="content-card">
 
                     <div class="card-header">
@@ -270,6 +409,7 @@
 
                         </div>
 
+
                         <button
                             id="viewCustomersButton"
                             class="secondary-button"
@@ -278,6 +418,7 @@
                         </button>
 
                     </div>
+
 
                     <div class="table-wrapper">
 
@@ -296,6 +437,7 @@
 
                             </thead>
 
+
                             <tbody id="dashboardCustomersBody">
                             </tbody>
 
@@ -308,25 +450,36 @@
             </section>
 
 
-            <!-- ================================================= -->
-            <!-- CUSTOMERS PAGE -->
-            <!-- ================================================= -->
-            <section id="customersPage" class="page">
+
+            <!-- =====================================
+                 CUSTOMERS PAGE
+            ====================================== -->
+            <section
+                id="customersPage"
+                class="page"
+            >
 
                 <div class="content-card customers-card">
 
-                    <!-- Customer Header -->
+
                     <div class="customers-header">
 
                         <div>
 
-                            <h2>Customer Accounts</h2>
+                            <span class="eyebrow">
+                                CUSTOMER DATABASE
+                            </span>
+
+                            <h2>
+                                Customer Accounts
+                            </h2>
 
                             <p>
                                 Search and filter branch customer propensity data.
                             </p>
 
                         </div>
+
 
                         <button
                             id="backToHighButton"
@@ -338,12 +491,15 @@
                     </div>
 
 
+
                     <!-- Search -->
                     <div class="search-area">
 
                         <div class="search-box">
 
-                            <span>⌕</span>
+                            <span>
+                                ⌕
+                            </span>
 
                             <input
                                 type="text"
@@ -356,12 +512,14 @@
                     </div>
 
 
+
                     <!-- Filters -->
                     <div class="filter-section">
 
                         <div class="filter-label">
                             Filter by propensity
                         </div>
+
 
                         <div class="filter-buttons">
 
@@ -372,6 +530,7 @@
                                 All Accounts
                             </button>
 
+
                             <button
                                 class="filter-button"
                                 data-filter="high"
@@ -379,12 +538,14 @@
                                 High
                             </button>
 
+
                             <button
                                 class="filter-button"
                                 data-filter="medium"
                             >
                                 Medium
                             </button>
+
 
                             <button
                                 class="filter-button"
@@ -398,7 +559,8 @@
                     </div>
 
 
-                    <!-- Customer Count -->
+
+                    <!-- Result Count -->
                     <div class="result-info">
 
                         <span id="customerResultCount">
@@ -406,6 +568,7 @@
                         </span>
 
                     </div>
+
 
 
                     <!-- Customer Table -->
@@ -428,6 +591,7 @@
 
                             </thead>
 
+
                             <tbody id="customersTableBody">
                             </tbody>
 
@@ -440,14 +604,24 @@
             </section>
 
 
-            <!-- ================================================= -->
-            <!-- ANALYTICS PAGE -->
-            <!-- ================================================= -->
-            <section id="analyticsPage" class="page">
+
+            <!-- =====================================
+                 ANALYTICS PAGE
+            ====================================== -->
+            <section
+                id="analyticsPage"
+                class="page"
+            >
 
                 <div class="analytics-heading">
 
-                    <h2>Analytics</h2>
+                    <span class="eyebrow">
+                        PERFORMANCE OVERVIEW
+                    </span>
+
+                    <h2>
+                        Analytics
+                    </h2>
 
                     <p>
                         Overview of SIP propensity across customers in your branch.
@@ -460,56 +634,73 @@
 
                     <div class="analytics-card">
 
-                        <span>Average SIP Propensity Score</span>
+                        <span>
+                            Average SIP Propensity Score
+                        </span>
 
                         <strong id="averageScore">
                             0
                         </strong>
 
-                        <small>Based on all branch customers</small>
+                        <small>
+                            Based on all branch customers
+                        </small>
 
                     </div>
 
 
                     <div class="analytics-card">
 
-                        <span>High Propensity Rate</span>
+                        <span>
+                            High Propensity Rate
+                        </span>
 
                         <strong id="highRate">
                             0%
                         </strong>
 
-                        <small>Priority investment opportunities</small>
+                        <small>
+                            Priority investment opportunities
+                        </small>
 
                     </div>
 
 
                     <div class="analytics-card">
 
-                        <span>Medium Propensity Rate</span>
+                        <span>
+                            Medium Propensity Rate
+                        </span>
 
                         <strong id="mediumRate">
                             0%
                         </strong>
 
-                        <small>Customers requiring engagement</small>
+                        <small>
+                            Customers requiring engagement
+                        </small>
 
                     </div>
 
 
                     <div class="analytics-card">
 
-                        <span>Low Propensity Rate</span>
+                        <span>
+                            Low Propensity Rate
+                        </span>
 
                         <strong id="lowRate">
                             0%
                         </strong>
 
-                        <small>Lower immediate investment likelihood</small>
+                        <small>
+                            Lower immediate investment likelihood
+                        </small>
 
                     </div>
 
                 </div>
+
 
 
                 <div class="content-card">
@@ -518,7 +709,9 @@
 
                         <div>
 
-                            <h2>Propensity Distribution</h2>
+                            <h2>
+                                Propensity Distribution
+                            </h2>
 
                             <p>
                                 Customer distribution based on predicted SIP propensity.
@@ -531,17 +724,21 @@
 
                     <div class="distribution-list">
 
+
                         <div class="distribution-item">
 
                             <div class="distribution-title">
 
-                                <span>High Propensity</span>
+                                <span>
+                                    High Propensity
+                                </span>
 
                                 <strong id="highDistributionText">
                                     0%
                                 </strong>
 
                             </div>
+
 
                             <div class="progress-track">
 
@@ -555,17 +752,21 @@
                         </div>
 
 
+
                         <div class="distribution-item">
 
                             <div class="distribution-title">
 
-                                <span>Medium Propensity</span>
+                                <span>
+                                    Medium Propensity
+                                </span>
 
                                 <strong id="mediumDistributionText">
                                     0%
                                 </strong>
 
                             </div>
+
 
                             <div class="progress-track">
 
@@ -579,17 +780,21 @@
                         </div>
 
 
+
                         <div class="distribution-item">
 
                             <div class="distribution-title">
 
-                                <span>Low Propensity</span>
+                                <span>
+                                    Low Propensity
+                                </span>
 
                                 <strong id="lowDistributionText">
                                     0%
                                 </strong>
 
                             </div>
+
 
                             <div class="progress-track">
 
@@ -609,14 +814,24 @@
             </section>
 
 
-            <!-- ================================================= -->
-            <!-- SETTINGS PAGE -->
-            <!-- ================================================= -->
-            <section id="settingsPage" class="page">
+
+            <!-- =====================================
+                 SETTINGS PAGE
+            ====================================== -->
+            <section
+                id="settingsPage"
+                class="page"
+            >
 
                 <div class="settings-heading">
 
-                    <h2>Settings</h2>
+                    <span class="eyebrow">
+                        SYSTEM PREFERENCES
+                    </span>
+
+                    <h2>
+                        Settings
+                    </h2>
 
                     <p>
                         Dashboard and prototype configuration.
@@ -627,6 +842,8 @@
 
                 <div class="settings-grid">
 
+
+                    <!-- Data Source -->
                     <div class="settings-card">
 
                         <div class="settings-card-header">
@@ -635,9 +852,12 @@
                                 ◉
                             </div>
 
+
                             <div>
 
-                                <h3>Data Source</h3>
+                                <h3>
+                                    Data Source
+                                </h3>
 
                                 <p>
                                     Customer data configuration
@@ -652,13 +872,16 @@
 
                             <div>
 
-                                <strong>Customer Data</strong>
+                                <strong>
+                                    Customer Data
+                                </strong>
 
                                 <span>
                                     Currently using branch-level demo customer data.
                                 </span>
 
                             </div>
+
 
                             <span class="status-badge active">
                                 Demo Data
@@ -669,6 +892,8 @@
                     </div>
 
 
+
+                    <!-- ML Model -->
                     <div class="settings-card">
 
                         <div class="settings-card-header">
@@ -677,9 +902,12 @@
                                 ◈
                             </div>
 
+
                             <div>
 
-                                <h3>ML Model</h3>
+                                <h3>
+                                    ML Model
+                                </h3>
 
                                 <p>
                                     SIP propensity prediction
@@ -694,13 +922,16 @@
 
                             <div>
 
-                                <strong>Prediction Model</strong>
+                                <strong>
+                                    Prediction Model
+                                </strong>
 
                                 <span>
                                     ML model can be connected to the backend later.
                                 </span>
 
                             </div>
+
 
                             <span class="status-badge pending">
                                 Prototype
@@ -711,6 +942,8 @@
                     </div>
 
 
+
+                    <!-- Backend -->
                     <div class="settings-card">
 
                         <div class="settings-card-header">
@@ -719,9 +952,12 @@
                                 ◌
                             </div>
 
+
                             <div>
 
-                                <h3>Backend</h3>
+                                <h3>
+                                    Backend
+                                </h3>
 
                                 <p>
                                     System integration
@@ -736,13 +972,16 @@
 
                             <div>
 
-                                <strong>Spring Boot API</strong>
+                                <strong>
+                                    Spring Boot API
+                                </strong>
 
                                 <span>
                                     Backend integration is planned for a future version.
                                 </span>
 
                             </div>
+
 
                             <span class="status-badge pending">
                                 Pending
@@ -753,6 +992,8 @@
                     </div>
 
 
+
+                    <!-- Appearance -->
                     <div class="settings-card">
 
                         <div class="settings-card-header">
@@ -761,9 +1002,12 @@
                                 ◐
                             </div>
 
+
                             <div>
 
-                                <h3>Appearance</h3>
+                                <h3>
+                                    Appearance
+                                </h3>
 
                                 <p>
                                     Dashboard theme preferences
@@ -778,13 +1022,16 @@
 
                             <div>
 
-                                <strong>Dark Mode</strong>
+                                <strong>
+                                    Dark / Light Mode
+                                </strong>
 
                                 <span>
-                                    Change between light and dark appearance.
+                                    Change between the premium dark and light appearance.
                                 </span>
 
                             </div>
+
 
                             <button
                                 id="settingsThemeToggle"
@@ -809,4 +1056,5 @@
     <script src="script.js"></script>
 
 </body>
+
 </html>
